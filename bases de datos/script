@@ -1,4 +1,4 @@
-CREATE DATABASE sistemadae_local_vic
+CREATE DATABASE sistemadae_local
 USE sistemadae_local_vic
 
 CREATE TABLE tipo_evento(
@@ -76,7 +76,7 @@ create table datos(
 );
 
 create table asistente_acontecimiento(
-  --id_datos char primary key,		****************************PENDIENTE**************************
+  --id_datos char primary key,
   nombre_asist varchar(25) not null,
   apellido_p_asist varchar(20) not null,
   apellido_m_asist varchar(20) not null,
