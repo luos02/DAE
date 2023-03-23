@@ -1,20 +1,6 @@
 CREATE DATABASE sistemadae_local_vic
 USE sistemadae_local_vic
 
-
-
-CREATE TABLE hora(
-    id_hora int PRIMARY key,
-    hora_inicio TIME NOT NULL,
-    hora_fin TIME NOT NULL
-);
-
-CREATE TABLE fecha(
-    id_fecha int PRIMARY KEY,
-    fecha_inicio DATE NOT NULL,
-    fecha_fin DATE NOT NULL
-);
-
 CREATE TABLE tipo_evento(
     id_tipo_evento INT PRIMARY KEY,
     tipo VARCHAR(20) NOT NULL
@@ -41,8 +27,10 @@ CREATE TABLE acontecimiento(
     id_acontecimiento int PRIMARY KEY,
     descripcion_evento VARCHAR(50) NOT NULL,
     id_plantel_acon int not null,
-    id_hora_acon int NOT NULL,
-    id_fecha_acon int NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE NOT NULL,
     id_disponibilidad_acon int NOT NULL,
     id_coordinacion_acon int not null,
     id_tipo_acon int NOT NULL,
