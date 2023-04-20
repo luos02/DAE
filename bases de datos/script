@@ -1,5 +1,6 @@
-CREATE DATABASE sistemadae_local
-USE sistemadae_local_vic
+create database dae;
+
+use dae;
 
 CREATE TABLE tipo_evento(
     id_tipo_evento INT PRIMARY KEY,
@@ -13,9 +14,7 @@ CREATE TABLE coordinacion(
 
 CREATE TABLE disponibilidad(
     id_disponibilidad int PRIMARY KEY,
-    estado VARCHAR(15) NOT NULL,
-    id_fecha_disponibilidad INT not NULL,
-    FOREIGN KEY (id_fecha_disponibilidad) REFERENCES fecha(id_fecha) 
+    estado VARCHAR(15) NOT NULL
 );
 
 create table plantel(
@@ -35,8 +34,6 @@ CREATE TABLE acontecimiento(
     id_coordinacion_acon int not null,
     id_tipo_acon int NOT NULL,
     Foreign Key (id_plantel_acon) REFERENCES plantel(id_plantel),
-    Foreign Key (id_hora_acon) REFERENCES hora(id_hora),
-    Foreign Key (id_fecha_acon) REFERENCES fecha(id_fecha),
     Foreign Key (id_disponibilidad_acon) REFERENCES disponibilidad(id_disponibilidad),
     Foreign Key (id_coordinacion_acon) REFERENCES coordinacion(id_coordinacion),
     Foreign Key (id_tipo_acon) REFERENCES tipo_evento(id_tipo_evento)
@@ -76,7 +73,7 @@ create table datos(
 );
 
 create table asistente_acontecimiento(
-  --id_datos char primary key,
+  id_datos char primary key,
   nombre_asist varchar(25) not null,
   apellido_p_asist varchar(20) not null,
   apellido_m_asist varchar(20) not null,
