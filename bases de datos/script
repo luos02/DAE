@@ -68,8 +68,13 @@ create table tipo_asist(
 );
 
 create table datos(
-  id_datos_asist char primary key,
-  datos_asist varchar(30)
+  id_datos int primary key auto_increment,
+  id_evento int,
+  correo_Electrónico varchar(30),
+  cantidad int,
+  tipo_de_entrada varchar(30),
+  Asistente_no int,
+  Tipo_de_pedido varchar(30)
 );
 
 create table asistente_acontecimiento(
